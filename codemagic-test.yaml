@@ -1,0 +1,18 @@
+workflows:
+  test-react-native:
+    name: Test build
+    instance_type: linux
+    environment:
+      node: 16.11.1
+      java: 11
+    scripts:
+      - name: Echo
+        script: |
+          echo "Build OK"
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: "add-pipeline"
+          include: true
+          source: true
