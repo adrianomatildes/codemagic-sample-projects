@@ -1,7 +1,7 @@
 workflows:
   react-native-android:
     name: Build React Native Android APK
-    instance_type: linux_x2
+    instance_type: linux  # <-- compatível com plano gratuito
     max_build_duration: 60
     environment:
       node: 16.11.1
@@ -20,6 +20,6 @@ workflows:
       events:
         - push
       branch_patterns:
-        - pattern: "main"
+        - pattern: "*"
           include: true
           source: true
